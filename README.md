@@ -2,38 +2,41 @@
 
 ## 1. Identificação
 
-**Nome do aluno: Carlos Eduardo Nunes Siqueira
-**Disciplina:** Algoritmos e pensamento computacional
-**Professora:** Profa. Karla Sartin  
-**Título do projeto:** Monitoramento de Temperaturas
+- **Nome do aluno:** Carlos Eduardo Nunes Siqueira
+- **Disciplina:** Algoritmos e Pensamento Computacional
+- **Professora:** Profa. Karla Sartin
+- **Título do projeto:** Monitoramento de Temperaturas
 
 ## 2. Objetivo
 
 O objetivo deste projeto é desenvolver um programa em linguagem C para realizar o monitoramento de temperaturas.
 
-O programa recebe um limite de temperatura e depois realiza várias leituras. Durante o monitoramento, ele verifica se as temperaturas estão acima do limite e identifica quando ocorrem três temperaturas consecutivas acima desse valor.
+O programa permite definir um limite de temperatura e depois realizar várias leituras. Durante o monitoramento, ele verifica se as temperaturas estão acima do limite e controla quantas temperaturas consecutivas ultrapassaram esse valor.
 
-Quando isso acontece, o monitoramento é encerrado automaticamente e o programa apresenta um relatório com os resultados obtidos.
+Quando são registradas três temperaturas consecutivas acima do limite, o programa encerra o monitoramento automaticamente e apresenta um relatório final.
 
 ## 3. Funcionamento do programa
 
-Primeiro, o usuário informa o limite de temperatura que será utilizado durante o monitoramento.
+Primeiro, o usuário informa o limite de temperatura que será utilizado no monitoramento.
 
-Depois disso, o programa solicita as temperaturas uma por uma.
+O programa aceita valores entre -50 e 100 graus. Caso o usuário digite um valor fora dessa faixa, o programa informa que o valor é inválido e solicita uma nova entrada.
 
-As entradas são verificadas para evitar valores inválidos. Caso seja informado um valor fora da faixa permitida, o programa solicita uma nova entrada.
+Depois de definir o limite, o programa começa a solicitar as temperaturas.
 
-Cada temperatura válida é utilizada nos cálculos do programa.
+Cada temperatura válida é utilizada para realizar os cálculos do programa.
 
-Quando uma temperatura é maior que o limite definido, o programa aumenta a quantidade de temperaturas acima do limite e também aumenta o contador de temperaturas consecutivas.
+Quando uma temperatura é maior que o limite definido, o programa:
 
-Caso seja digitada uma temperatura que não esteja acima do limite, o contador de temperaturas consecutivas volta para zero.
+- aumenta a quantidade de temperaturas acima do limite;
+- aumenta o contador de temperaturas consecutivas acima do limite.
 
-O monitoramento continua até que sejam registradas três temperaturas consecutivas acima do limite.
+Caso seja digitada uma temperatura que esteja dentro do limite, o contador de temperaturas consecutivas volta para zero.
 
-Ao final, o programa apresenta:
+O monitoramento continua enquanto não forem registradas três temperaturas consecutivas acima do limite.
 
-- quantidade de leituras;
+Quando isso acontece, o programa encerra automaticamente e apresenta:
+
+- quantidade de leituras realizadas;
 - média das temperaturas;
 - maior temperatura registrada;
 - menor temperatura registrada;
@@ -44,11 +47,13 @@ Ao final, o programa apresenta:
 
 Foram utilizadas as estruturas `while` e `do...while`.
 
-O `do...while` foi utilizado na validação das entradas. Essa estrutura foi escolhida porque o programa precisa solicitar um valor pelo menos uma vez antes de verificar se ele é válido.
+O `do...while` foi utilizado na validação das entradas. Ele foi escolhido porque o programa precisa solicitar um valor pelo menos uma vez antes de verificar se ele é válido.
 
-O `while` foi utilizado para controlar o monitoramento das temperaturas. Enquanto não existirem três temperaturas consecutivas acima do limite, o programa continua solicitando novas leituras.
+O `while` foi utilizado para controlar o monitoramento das temperaturas.
 
-A combinação das duas estruturas permite controlar tanto a validação dos dados quanto a repetição das leituras.
+Enquanto não forem registradas três temperaturas consecutivas acima do limite, o programa continua solicitando novas temperaturas.
+
+A combinação das duas estruturas permite controlar a validação dos valores e também a repetição das leituras.
 
 ## 5. Como executar
 

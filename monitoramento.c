@@ -19,7 +19,7 @@ int main() {
 
     printf("=== MONITORAMENTO DE TEMPERATURAS ===\n\n");
 
-    
+    /* Validacao do limite de temperatura */
     do {
 
         printf("Digite o limite de temperatura entre -50 e 100: ");
@@ -37,10 +37,10 @@ int main() {
     printf("3 temperaturas consecutivas acima do limite.\n\n");
 
 
-    
+    /* Monitoramento das temperaturas */
     while (consecutivasAcima < 3) {
 
-        
+        /* Validacao da temperatura digitada */
         do {
 
             printf("Digite a temperatura: ");
@@ -53,14 +53,14 @@ int main() {
         } while (temperatura < TEMP_MIN || temperatura > TEMP_MAX);
 
 
-        
+        /* Conta uma nova leitura valida */
         quantidade++;
 
-     
+        /* Soma para calcular a media depois */
         soma = soma + temperatura;
 
 
-       
+        /* Define maior e menor temperatura */
         if (quantidade == 1) {
 
             maior = temperatura;
@@ -78,7 +78,7 @@ int main() {
         }
 
 
-        
+        /* Verifica se passou do limite */
         if (temperatura > limite) {
 
             quantidadeAcima++;
@@ -90,7 +90,7 @@ int main() {
 
         } else {
 
-           
+            /* Reinicia a contagem */
             consecutivasAcima = 0;
 
             printf("Temperatura dentro do limite.\n");
@@ -99,14 +99,14 @@ int main() {
     }
 
 
-   
+    /* Calculos finais */
     media = soma / quantidade;
 
     percentualAcima =
         (quantidadeAcima * 100.0) / quantidade;
 
 
-    
+    /* Aviso de encerramento */
     printf("\n=== ALERTA ===\n");
 
     printf("Foram registradas 3 temperaturas consecutivas\n");
@@ -115,7 +115,7 @@ int main() {
     printf("Monitoramento encerrado automaticamente.\n");
 
 
-  
+    /* Relatorio final */
     printf("\n=== RELATORIO FINAL ===\n");
 
     printf("Limite definido: %.2f C\n", limite);
